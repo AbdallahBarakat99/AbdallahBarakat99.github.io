@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background-color: #f0f2f5; /* A soft, light gray background for a modern feel */
-    overflow-x: hidden;
+    overflow-x: hidden; /* Ensure no horizontal scrollbar on body */
     font-family: 'Inter', sans-serif;
     color: #333; /* Darker text for better readability */
     line-height: 1.6; /* Improved line spacing for readability */
@@ -160,7 +160,6 @@ body {
     margin: 0;
     font-size: 2em; /* Larger heading */
     font-weight: 600;
-
 }
 
 .experience-title-btn a {
@@ -178,39 +177,48 @@ body {
     text-decoration: none;
 }
 
+/* === CSS FOR AUTOMATIC SLIDER CONTAINER === */
 .experience-main {
-    padding: 0 20px; /* Adjusted padding */
-    margin-top: 30px;
-    display: flex;
-    gap: 30px; /* Reduced gap for more compact look */
+    padding: 0 20px; /* Keep padding for overall section spacing */
+    margin-top: 30px; /* Keep original margin-top */
+    display: flex; /* Still use flexbox for `.experience-main` to contain `.experience-slider-inner` */
+    gap: 0; /* Remove gap here, as it will be on the inner slider */
+    overflow: hidden; /* CRITICAL: Hide horizontal overflow */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none;  /* Hide scrollbar for IE/Edge */
-    max-width: 1024px;
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    width: 100%; /* Ensure it takes full available width */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .experience-main::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari, Opera */
 }
 
-/* === CSS FOR AUTOMATIC SLIDER === */
+/* NEW: Styles for the inner container that will hold the animating cards */
+.experience-slider-inner {
+    display: flex; /* Apply flexbox here to arrange cards horizontally */
+    gap: 30px; /* Apply gap here */
+    width: calc((300px + 30px) * 10); /* Total width for original 8 cards + 2 clones to make 10 total for seamless loop + gaps */
+    animation: slide 30s linear infinite reverse; /* Slower animation for smoothness */
+    animation-play-state: running; /* Ensure animation runs by default */
+}
+
 @keyframes slide {
     from {
         transform: translateX(0);
     }
     to {
         /* Adjust calculation based on new gap and card width */
-        transform: translateX(calc((300px + 30px) * -5)); /* Assuming 5 full cards visible for 10 cards total, adjust as needed */
+        /* For 8 original cards, cloning 8 more makes 16 total.
+           To scroll one full set, it's (card_width + gap) * num_original_cards */
+        transform: translateX(calc((300px + 30px) * -8)); /* Scrolls one full set of original cards */
     }
-}
-.experience-main {
-    width: calc((300px + 30px) * 10); /* Total width for 10 cards + gaps */
-    animation: slide 30s linear infinite reverse; /* Slower animation for smoothness */
-
 }
 
 .experience-cards {
     min-width: 300px; /* Use min-width instead of width for responsiveness */
+    flex-shrink: 0; /* Important: Prevent cards from shrinking within the flex container */
     background-color: #ffffff; /* White background for cards */
     border-radius: 30px;
     cursor: pointer;
@@ -218,7 +226,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden; /* Ensure image and content stay within bounds */
     height: 350px;
-
 }
 
 .experience-cards:hover {
@@ -432,9 +439,9 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .intro {
-        margin-left: 20px;
-        margin-right: 20px;
-        padding: 30px;
+        margin-left: 20px; /* Revert to original */
+        margin-right: 20px; /* Revert to original */
+        padding: 30px; /* Revert to original */
     }
 
     .intro-content {
@@ -455,18 +462,35 @@ body {
         align-items: center;
     }
 
+    .intro-btn {
+        /* Revert to original styling for buttons on smaller screens */
+        padding: 12px 25px;
+        font-size: 1.1em;
+        width: auto; /* Revert from 90% */
+        max-width: none; /* Revert from 250px */
+        margin-bottom: 0; /* Revert from 10px */
+    }
+
     .experience-title {
-        padding: 15px 20px;
+        padding: 15px 20px; /* Keep this change */
         margin-left: 20px;
         margin-right: 20px;
+        justify-content: center; /* Keep this change */
+        text-align: center; /* Keep this change */
+        flex-direction: column; /* Keep this change */
     }
 
     .experience-main {
-        padding: 0 10px;
+        padding: 0 10px; /* Keep this change */
+        /* animation: none; -- REMOVED: Animation should continue on inner element */
+        overflow: hidden; /* Keep this change */
+        justify-content: flex-start; /* Keep this change */
+        flex-wrap: nowrap; /* Keep this change */
     }
 
     .experience-cards {
-        min-width: 280px; /* Adjust card width for smaller screens */
+        min-width: 280px; /* Keep this change */
+        flex-shrink: 0; /* Keep this change */
     }
 
     .education-main {
@@ -475,7 +499,7 @@ body {
 
     .education-card {
         width: 100%;
-        max-width: 350px; /* Keep max-width for education cards */
+        max-width: 350px;
     }
 
     .modal-content {
@@ -494,6 +518,12 @@ body {
         height: 200px;
     }
 
+    .intro {
+        margin-left: 20px; /* Revert to original */
+        margin-right: 20px; /* Revert to original */
+        padding: 30px; /* Revert to original */
+    }
+
     .intro-text h4 {
         font-size: 1.5em;
     }
@@ -503,8 +533,10 @@ body {
     }
 
     .intro-btn {
+        /* Revert to original styling for buttons on very small screens */
         padding: 10px 20px;
         font-size: 1em;
+        width: auto; /* Revert from 95% */
     }
 
     .experience-title h2 {
@@ -514,10 +546,13 @@ body {
     .experience-title-btn a {
         font-size: 1em;
     }
+
+    .experience-cards {
+        min-width: 250px; /* Keep this change */
+    }
 }
 
 /* Footer Styles */
-
 .footer-distributed {
   background-color: #2c3e50;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -658,46 +693,4 @@ body {
 
 .footer-distributed .footer-icons a:hover {
   background-color: #007bff;
-}
-@media (max-width: 768px) {
-    .experience-main {
-        /* Remove fixed width and animation for smaller screens */
-        width: auto; /* Allow width to be determined by content and flexbox */
-        animation: none; /* Disable the auto-slide animation */
-        overflow-x: auto; /* Enable horizontal scrolling if content overflows naturally */
-        justify-content: flex-start; /* Align items to the start */
-        flex-wrap: nowrap; /* Prevent cards from wrapping to the next line */
-    }
-
-    .experience-cards {
-        flex-shrink: 0; /* Prevent cards from shrinking */
-    }
-
-    /* Adjust padding for experience title for better mobile fit */
-    .experience-title {
-        padding: 15px 20px; /* Reduced padding for smaller screens */
-        margin-left: 20px;
-        margin-right: 20px;
-        justify-content: center; /* Center content horizontally */
-        text-align: center; /* Center text within the title */
-        flex-direction: column; /* Stack title elements vertically */
-    }
-
-    .experience-title-header h2 {
-        font-size: 1.8em; /* Slightly smaller font for mobile */
-    }
-
-    .experience-title-btn {
-        margin-top: 10px; /* Add some space between title and button */
-    }
-}
-
-@media (max-width: 480px) {
-    .experience-cards {
-        min-width: 260px; /* Further reduce min-width for very small screens */
-    }
-
-    .experience-title h2 {
-        font-size: 1.5em; /* Even smaller font for very small screens */
-    }
 }
