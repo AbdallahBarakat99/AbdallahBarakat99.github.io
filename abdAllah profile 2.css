@@ -226,6 +226,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden; /* Ensure image and content stay within bounds */
     height: 350px;
+    width: 300px;
 }
 
 .experience-cards:hover {
