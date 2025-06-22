@@ -659,3 +659,45 @@ body {
 .footer-distributed .footer-icons a:hover {
   background-color: #007bff;
 }
+@media (max-width: 768px) {
+    .experience-main {
+        /* Remove fixed width and animation for smaller screens */
+        width: auto; /* Allow width to be determined by content and flexbox */
+        animation: none; /* Disable the auto-slide animation */
+        overflow-x: auto; /* Enable horizontal scrolling if content overflows naturally */
+        justify-content: flex-start; /* Align items to the start */
+        flex-wrap: nowrap; /* Prevent cards from wrapping to the next line */
+    }
+
+    .experience-cards {
+        flex-shrink: 0; /* Prevent cards from shrinking */
+    }
+
+    /* Adjust padding for experience title for better mobile fit */
+    .experience-title {
+        padding: 15px 20px; /* Reduced padding for smaller screens */
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: center; /* Center content horizontally */
+        text-align: center; /* Center text within the title */
+        flex-direction: column; /* Stack title elements vertically */
+    }
+
+    .experience-title-header h2 {
+        font-size: 1.8em; /* Slightly smaller font for mobile */
+    }
+
+    .experience-title-btn {
+        margin-top: 10px; /* Add some space between title and button */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-cards {
+        min-width: 260px; /* Further reduce min-width for very small screens */
+    }
+
+    .experience-title h2 {
+        font-size: 1.5em; /* Even smaller font for very small screens */
+    }
+}
