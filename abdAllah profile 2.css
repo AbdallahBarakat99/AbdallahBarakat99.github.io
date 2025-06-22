@@ -186,6 +186,7 @@ body {
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     -ms-overflow-style: none;  /* Hide scrollbar for IE/Edge */
+    max-width: 1024px;
 }
 
 .experience-main::-webkit-scrollbar {
@@ -657,15 +658,4 @@ body {
 
 .footer-distributed .footer-icons a:hover {
   background-color: #007bff;
-}
-/* This is the code that FIXED the problem */
-
-/* This targets tablets and mobile devices */
-@media (max-width: 1024px) {
-
-    /* Selects the experience container */
-    .experience-main {
-        /* FIX 1: Forces the container to be the width of the screen, not wider. */
-        width: 100%;
-    }
 }
