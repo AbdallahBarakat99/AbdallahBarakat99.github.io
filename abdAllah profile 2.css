@@ -145,15 +145,20 @@ body {
 
 .experience-title {
     background-color: #007bff; /* Consistent blue background */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px 15px 520px; /* Adjusted padding */
+    padding: 15px 40px;
     border-radius: 40px;
     color: white;
     margin-right: 30px;
     margin-left: 30px;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); /* Blue-tinted shadow */
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    position: relative; /* Required for positioning the button */
+    text-align: center; /* This will center the h2 titles */
+}
+.experience-title-btn {
+    position: absolute;
+    right: 40px; /* Aligns the button to the right */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .experience-title h2 {
