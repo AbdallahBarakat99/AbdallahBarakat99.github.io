@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AbdAllah Barakat — Industrial & Systems Engineering</title>
+  <meta name="description" content="Industrial & Systems Engineering graduate student focused on operations & process optimization, manufacturing, and data-driven improvement." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220; --panel:#0f1a33; --muted:#8ba0c7; --brand:#2f7cf6; --brand2:#3aa0ff; --ink:#e8eefc;
+      --ok:#30c48d; --warn:#f6b22f;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);} 
+    a{color:#aeddff;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+    header .brand{font-weight:800;letter-spacing:.3px}
+    nav a{margin:0 10px;color:var(--ink);opacity:.85}
+    nav a:hover{opacity:1}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:600}
+    .btn.primary{background:#fff;color:#0b5bd3}
+    .btn.ghost{border:2px solid #fff;color:#fff}
+    /* HERO */
+    .hero{background:linear-gradient(135deg,var(--brand) 0%,var(--brand2) 100%);border-radius:24px;padding:32px;box-shadow:0 20px 50px rgba(0,0,0,.2);} 
+    .hero h1{margin:0 0 6px;font-size:30px;line-height:1.2}
+    .hero p.sub{margin:0 0 18px;font-size:16px;opacity:.95}
+    .hero p{margin:0 0 14px;font-size:17px;max-width:850px}
+    .hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+
+    /* HIGHLIGHTS */
+    .highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+    .card{background:var(--panel);border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,.06)}
+    .kpi{font-size:20px;font-weight:800}
+    .card:nth-child(1) .kpi { color: var(--ok); }
+        .card:nth-child(2) .kpi { color: var(--warn); }
+        .card:nth-child(3) .kpi { color: #55aaff; }
+    .hint{color:var(--muted);font-size:13px;margin-top:4px}
+
+    /* SECTIONS */
+    section{margin:32px 0}
+    h2{margin:0 0 12px;font-size:22px}
+    .grid{display:grid;gap:14px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .tile{background:var(--panel);border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,.06)}
+    .tile h3{margin:0 0 6px;font-size:18px}
+    .tag{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:3px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+    .list{margin:10px 0 0 18px}
+    .list li{margin:6px 0}
+
+    footer{padding:28px 0 40px;color:var(--muted);font-size:14px}
+    .icons a{margin-right:12px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .highlights{grid-template-columns:1fr 1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .hero h1{font-size:24px}
+      .hero p{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Abdallah Barakat</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO / INTRO -->
+    <section class="hero">
+      <h1>Industrial & Systems Engineering • Operations & Process Optimization</h1>
+      <p class="sub">Graduate Research Assistant • Former Operations Manager • Mechanical Engineering foundation</p>
+      <p>I bridge shop-floor execution with analytical rigor. At Dakahlia Group, I <strong>doubled drying-facility capacity</strong>, cut <strong>packaging costs by 30%</strong>, and improved product quality by <strong>10%</strong>. At Youngstown State University, I research metal FFF (Fused Filament Fabrication), using <strong>machine learning</strong> and <strong>DOE-driven process optimization</strong> to enhance print performance.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn ghost" href="#experience">Experience</a>
+        <a class="btn ghost" href="mailto:amosaad@student.ysu.edu">Contact</a>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <div class="highlights">
+      <div class="card"><div class="kpi">×2 capacity</div><div class="hint">Drying facility throughput</div></div>
+      <div class="card"><div class="kpi">−30% costs</div><div class="hint">Dates sorting & packaging</div></div>
+      <div class="card"><div class="kpi">+10% quality</div><div class="hint">Olive oil production</div></div>
+    </div>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid cols-3">
+        <article class="tile">
+          <h3>Dakahlia — Drying Facility Optimization</h3>
+          <div class="tag">Operations</div> <div class="tag">Process</div> <div class="tag">SOPs</div>
+          <ul class="list">
+            <li><strong>Challenge:</strong> Seasonal throughput bottlenecks and rework.</li>
+            <li><strong>Action:</strong> 6‑acre facility layout, SOPs, process mapping, labor planning.</li>
+            <li><strong>Result:</strong> Capacity <strong>×2</strong>, drying time <strong>−20%</strong>, utilization <strong>+30%</strong>.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Olive Oil — Quality Improvement</h3>
+          <div class="tag">Quality</div> <div class="tag">Process Control</div>
+          <ul class="list">
+            <li><strong>Challenge:</strong> Inconsistent quality across batches.</li>
+            <li><strong>Action:</strong> QA alignment, process control, supplier coordination.</li>
+            <li><strong>Result:</strong> Product quality <strong>+10%</strong>.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Medjool Dates — Cost Reduction</h3>
+          <div class="tag">Cost</div> <div class="tag">Lean</div>
+          <ul class="list">
+            <li><strong>Challenge:</strong> High sorting & packaging costs.</li>
+            <li><strong>Action:</strong> Workflow redesign, supplier negotiations, training.</li>
+            <li><strong>Result:</strong> Operating costs <strong>−30%</strong>.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid cols-2">
+        <article class="tile">
+          <h3>Graduate Research Assistant — Youngstown State University</h3>
+          <div class="tag">Aug 2025 – Present</div>
+          <ul class="list">
+            <li>Research on <strong>metal FFF</strong>: predictive ML models linking process parameters to mechanical/electrical performance.</li>
+            <li>Designed and ran <strong>DOE/ANOVA</strong>; statistical analysis in <strong>MATLAB</strong>.</li>
+            <li>Documented methods and results for publications and presentations.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Operations Manager — Dakahlia Group (Cairo, Egypt)</h3>
+          <div class="tag">Jul 2023 – Dec 2024</div>
+          <ul class="list">
+            <li>Project‑managed a <strong>6‑acre</strong> drying facility (raisins) to eliminate bottlenecks.</li>
+            <li>Standardized operations with <strong>SOPs & process maps</strong>; reduced rework, improved training.</li>
+            <li>Oversaw <strong>three pack houses</strong> (citrus, potatoes, grapes/raisins, olives, dates).</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid cols-3" style="margin-top:14px">
+        <article class="tile">
+          <h3>EgyptAir — Maintenance & Technical Work</h3>
+          <div class="tag">Intern • 2022</div>
+          <ul class="list">
+            <li>Heat‑exchanger tests; observed jet‑engine assembly; NDT & control‑systems support.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Acropol — Site Engineer</h3>
+          <div class="tag">Intern • 2022</div>
+          <ul class="list">
+            <li>Under‑floor heating & solar‑water installs; PV sizing with <strong>PVsyst</strong>.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Abou Ghaly Motors — Maintenance</h3>
+          <div class="tag">Intern • 2019</div>
+          <ul class="list">
+            <li>Diagnostics on engines, suspensions, brakes, and vehicle electrics.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+      <h2>Research</h2>
+      <article class="tile">
+        <h3>Metal FFF — Machine Learning & Process Optimization</h3>
+        <div class="tag">YSU • 2025–Present</div>
+        <ul class="list">
+          <li>Built ML models to predict <strong>UTS and E‑modulus</strong> from process parameters.</li>
+          <li>Explored parameter windows to reduce defects and improve strength and yield.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- PROJECTS (ACADEMIC) -->
+    <section>
+      <h2>Engineering Projects</h2>
+      <div class="grid cols-3">
+        <article class="tile">
+          <h3>Planetary Gearbox (SolidWorks)</h3>
+          <ul class="list">
+            <li>Gear‑train sizing, materials selection, bearing fits; manufacturing drawings.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Manufactured Gearbox Assembly</h3>
+          <ul class="list">
+            <li>Machined shafts and press‑fit tolerances; Bill of Materials and assembly procedure.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Vehicle Prototype (CATIA)</h3>
+          <ul class="list">
+            <li>3D scanning and remodeling; prepared for basic FEA.</li>
+          </ul>
+        </article>
+      </div>
+      <article class="tile" style="margin-top:14px">
+        <h3>Optimization in MATLAB</h3>
+        <ul class="list">
+          <li>Parameter search to improve process efficiency; sensitivity analyses.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership">
+      <h2>Leadership & Activities</h2>
+      <div class="grid cols-2">
+        <article class="tile">
+          <h3>Enactus AUC — Vice President (2021–2022)</h3>
+          <ul class="list">
+            <li>Board recruitment; events; multi‑project portfolio & sponsor relations.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Finance & Economics Club — Treasurer (2021–2022)</h3>
+          <ul class="list">
+            <li>Budgeting, reporting, and audit readiness.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="grid cols-2" style="margin-top:14px">
+        <article class="tile">
+          <h3>AUC Racing Team — Powertrain Chief (2021–2022)</h3>
+          <ul class="list">
+            <li>Engine teardown/rebuild; team coordination and testing plan.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Volunteers in Action — Fundraising</h3>
+          <ul class="list">
+            <li>Head (2020–2021): led 13‑person team; sponsor prospecting & negotiations.</li>
+            <li>Member (2019–2020): benefit packages; outreach.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid cols-3">
+        <article class="tile">
+          <h3>Analytics & Tools</h3>
+          <ul class="list">
+            <li>MATLAB (optimization, machine learning), Minitab, Excel (advanced), Trello</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>CAD/CAE</h3>
+          <ul class="list">
+            <li>SolidWorks, AutoCAD, CATIA, ANSYS, ABAQUS, Adams, VXelements</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Operations & PM</h3>
+          <ul class="list">
+            <li>SOP design, process mapping, DOE, stakeholder management, Lean fundamentals, Six Sigma</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <article class="tile">
+        <p>I’m open to roles in operations & process optimization, manufacturing, and consulting. For opportunities, collaborations, or questions, reach me here:</p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:amosaad@student.ysu.edu">amosaad@student.ysu.edu</a><br/>
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abdallah-barakat-870134196" target="_blank">linkedin.com/in/abdallah-barakat-870134196</a>
+        </p>
+        <p><a class="btn primary" href="Abdallah Barakat -- Resume.pdf">Download CV</a></p>
+      </article>
+    </section>
+
+    <footer>
+      <div>©️ <script>document.write(new Date().getFullYear())</script> AbdAllah Barakat • Youngstown, OH • <a href="https://abdallahbarakat99.github.io/index.html" target="_blank">Portfolio Home</a></div>
+    </footer>
+  </div>
+</body>
+</html>
